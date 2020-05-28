@@ -1,0 +1,29 @@
+{
+  "name": "fidelity-helpdesk",
+  "version": "1.0.0",
+  "description": "fidelity help desk UI",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/acushlakoncept/fidelity-helpdesk.git"
+  },
+  "keywords": [
+    "fidelity",
+    "help",
+    "help",
+    "center",
+    "help",
+    "desk",
+    "support",
+    "center"
+  ],
+  "author": "Uduak Essien",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/acushlakoncept/fidelity-helpdesk/issues"
+  },
+  "homepage": "https://github.com/acushlakoncept/fidelity-helpdesk#readme"
+}
