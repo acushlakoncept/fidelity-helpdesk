@@ -1,0 +1,115 @@
+.header {
+    width: 100vw;
+    height: 80vh;
+    background: linear-gradient(105deg, $color-white, $color-white, $color-green, $color-blue);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 2rem;
+
+    &__left {
+        padding: 2rem .2rem 5rem 4rem;
+        position: relative;
+    }
+
+    &__right {
+        background: url('imgs/call-center.jpg') no-repeat right bottom;
+        background-size: cover;
+        height: 80vh;
+        width: 100%;
+        border-bottom-left-radius: .8rem;
+        position: relative;
+    }
+
+    &__nav{
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &__menu {
+        align-self: center;
+    }
+
+    &__list {
+        display: inline-block;
+        list-style: none;
+        vertical-align: bottom;
+    }
+    &__link,
+    &__link:link,
+    &__link:visited{
+        text-decoration: none;
+        color: $color-black;
+        padding-left: 1rem;
+        text-transform: uppercase;
+        font-size: .9rem;
+        font-weight: 700;
+    }
+
+    &__link:hover {
+        color: $color-blue-2;
+        text-decoration: underline;
+    }
+
+    .logo {
+        height: 2.5rem;
+    }
+
+    &__logo-text {
+        font-size: 1.5rem;
+        font-weight: 700;
+        vertical-align: top;
+        border-left: 1px solid;
+        padding-left: .5rem;
+        margin-left: .5rem;
+        color: $color-green;
+    }
+
+    &__support-text {
+        width: 35rem;
+        @include absCenter;
+        background-color: $color-white;
+        box-shadow: 0 2rem 4rem rgba($color-black, .2);
+        padding: 2rem;
+        border-radius: .8rem;
+    }
+
+    &__heading {
+        font-size: 3rem;
+        color: $color-blue;
+        font-weight: 700;
+
+        &-secondary{
+            color: $color-black;
+            font-size: 2.5rem;
+            font-weight: 300;
+        }
+    }
+
+    &__text{
+        font-size: 1.5rem;
+        font-weight: 300;
+    }
+
+    &__form{
+        @include absCenter;
+        
+
+        &--input{
+            padding: 1.5rem;
+            background-color: rgba($color-white, .8);
+            width: 35rem;
+            border: 1px solid #eee;
+            border-radius: 2rem;
+            font-size: 1.5rem;
+            font-weight: 100;
+            box-shadow: 0 2rem 2rem rgba($color-black, .5);
+            outline: none;
+
+            &:focus {
+                box-shadow: 0 1rem 1rem rgba($color-black, .5);
+            }
+        }
+
+        
+    }
+}

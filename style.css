@@ -1,25 +1,231 @@
+/*
+0 -600px: Phone
+600 - 900px: Tablet portrait
+900 - 1200px: Tablet landscape
+1200 - 1800px is where our normal styles apply
+1800px - Big desktop
+*/
+/*
+$breakpoint argument choices
+-phone
+-tab-port
+-tab-land
+-big-desktop 
+*/
 :root {
-    --green: #78b943;
-    --green2: #78b945;
-    --blue: #0e237e;
-    --blue2: #012169;
-  }
-  
-  * {
-    margin: 0;
-    padding: 0;
-    box-sizing: inherit;
-    text-decoration: none;
+  --green: #78b943;
+  --green2: #78b945;
+  --blue: #0e237e;
+  --blue2: #012169; }
+
+@keyframes moveInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-10rem); }
+  80% {
+    transform: translateX(1rem); }
+  100% {
+    opacity: 1;
+    transform: translateX(0); } }
+
+@keyframes moveInRight {
+  0% {
+    opacity: 0;
+    transform: translateX(10rem); }
+  80% {
+    transform: translateX(-1rem); }
+  100% {
+    opacity: 1;
+    transform: translateX(0); } }
+
+@keyframes moveInBottom {
+  0% {
+    opacity: 0;
+    transform: translateY(10rem); }
+  100% {
+    opacity: 1;
+    transform: translateY(0); } }
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit; }
+
+html {
+  /* Default browser font-size is 16px */
+  /* Since we want 10px as our default 10/16 gives 62.5% */
+  font-size: 62.5%; }
+  @media (max-width: 112.5em) {
+    html {
+      font-size: 75%; } }
+  @media (max-width: 75em) {
+    html {
+      font-size: 56.25%; } }
+  @media (max-width: 56.25em) {
+    html {
+      font-size: 50%; } }
+
+body {
+  box-sizing: border-box; }
+  @media (max-width: 56.25em) {
+    body {
+      padding: 0; } }
+
+body {
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  /* font-size: 16px; */
+  line-height: 1.7;
+  color: #777;
+  box-sizing: border-box; }
+
+.u-center-text {
+  text-align: center !important; }
+
+.u-margin-bottom-big {
+  margin-bottom: 8rem !important; }
+
+.u-margin-bottom-medium {
+  margin-bottom: 4rem !important; }
+  @media (max-width: 56.25em) {
+    .u-margin-bottom-medium {
+      margin-bottom: 3rem !important; } }
+
+.u-margin-bottom-small {
+  margin-bottom: 1.5rem !important; }
+
+.u-margin-top-big {
+  margin-bottom: 8rem !important; }
+  @media (max-width: 56.25em) {
+    .u-margin-top-big {
+      margin-bottom: 5rem !important; } }
+
+.u-margin-top-huge {
+  margin-bottom: 10rem !important; }
+
+.row {
+  max-width: 114rem;
+  margin: 0 auto; }
+  .row:not(:last-child) {
+    margin-bottom: 8rem; }
+    @media (max-width: 56.25em) {
+      .row:not(:last-child) {
+        margin-bottom: 6rem; } }
+  @media (max-width: 56.25em) {
+    .row {
+      max-width: 50rem;
+      padding: 0 3rem; } }
+  .row::after {
+    content: "";
+    display: table;
+    clear: both; }
+  .row [class^="col-"] {
+    float: left; }
+    .row [class^="col-"]:not(:last-child) {
+      margin-right: 6rem; }
+      @media (max-width: 56.25em) {
+        .row [class^="col-"]:not(:last-child) {
+          margin-right: 0;
+          margin-bottom: 6rem; } }
+    @media (max-width: 56.25em) {
+      .row [class^="col-"] {
+        width: 100% !important; } }
+  .row .col-1-of-2 {
+    width: calc((100% - 6rem) / 2); }
+  .row .col-1-of-3 {
+    width: calc((100% - 2 * 6rem) / 3); }
+  .row .col-1-of-4 {
+    width: calc((100% - 3 * 6rem) / 4); }
+  .row .col-2-of-3 {
+    width: calc( 2 * ((100% - 2 * 6rem) / 3) + 6rem); }
+  .row .col-2-of-4 {
+    width: calc( 2 * ((100% - 3 * 6rem) / 4) + 6rem); }
+  .row .col-3-of-4 {
+    width: calc( 3 * ((100% - 3 * 6rem) / 4) + 2 * 6rem); }
+
+.header {
+  width: 100vw;
+  height: 80vh;
+  background: linear-gradient(105deg, #fff, #fff, #78b943, #0e237e);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 2rem; }
+  .header__left {
+    padding: 2rem .2rem 5rem 4rem;
+    position: relative; }
+  .header__right {
+    background: url("imgs/call-center.jpg") no-repeat right bottom;
+    background-size: cover;
+    height: 80vh;
+    width: 100%;
+    border-bottom-left-radius: .8rem;
+    position: relative; }
+  .header__nav {
+    display: flex;
+    justify-content: space-between; }
+  .header__menu {
+    align-self: center; }
+  .header__list {
+    display: inline-block;
     list-style: none;
-  }
-  
-  html {
-    font-size: 62.5%;
-  }
-  
-  body {
-    font-family: "Lato", sans-serif;
-    font-weight: 400;
-    line-height: 1.4;
-    box-sizing: border-box;
-  }
+    vertical-align: bottom; }
+  .header__link, .header__link:link, .header__link:visited {
+    text-decoration: none;
+    color: #000;
+    padding-left: 1rem;
+    text-transform: uppercase;
+    font-size: .9rem;
+    font-weight: 700; }
+  .header__link:hover {
+    color: #012169;
+    text-decoration: underline; }
+  .header .logo {
+    height: 2.5rem; }
+  .header__logo-text {
+    font-size: 1.5rem;
+    font-weight: 700;
+    vertical-align: top;
+    border-left: 1px solid;
+    padding-left: .5rem;
+    margin-left: .5rem;
+    color: #78b943; }
+  .header__support-text {
+    width: 35rem;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    box-shadow: 0 2rem 4rem rgba(0, 0, 0, 0.2);
+    padding: 2rem;
+    border-radius: .8rem; }
+  .header__heading {
+    font-size: 3rem;
+    color: #0e237e;
+    font-weight: 700; }
+    .header__heading-secondary {
+      color: #000;
+      font-size: 2.5rem;
+      font-weight: 300; }
+  .header__text {
+    font-size: 1.5rem;
+    font-weight: 300; }
+  .header__form {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); }
+    .header__form--input {
+      padding: 1.5rem;
+      background-color: rgba(255, 255, 255, 0.8);
+      width: 35rem;
+      border: 1px solid #eee;
+      border-radius: 2rem;
+      font-size: 1.5rem;
+      font-weight: 100;
+      box-shadow: 0 2rem 2rem rgba(0, 0, 0, 0.5);
+      outline: none; }
+      .header__form--input:focus {
+        box-shadow: 0 1rem 1rem rgba(0, 0, 0, 0.5); }
