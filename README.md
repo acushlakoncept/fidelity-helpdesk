@@ -15,7 +15,7 @@
 
 ## Live Demo
 
-[Live Demo Link](#)
+[Live Demo Link](https://acushlakoncept.github.io/fidelity-helpdesk/)
 
 ## Authors
 
