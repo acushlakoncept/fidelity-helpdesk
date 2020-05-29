@@ -92,9 +92,9 @@
 
     &__form{
         @include absCenter;
-        
 
         &--input{
+            
             padding: 1.5rem;
             background-color: rgba($color-white, .8);
             width: 35rem;
@@ -105,11 +105,42 @@
             box-shadow: 0 2rem 2rem rgba($color-black, .5);
             outline: none;
 
+
             &:focus {
                 box-shadow: 0 1rem 1rem rgba($color-black, .5);
             }
         }
 
+        &--label{
+            font-size: 2rem;
+            font-weight: 100;
+            margin-left: -3rem;
+            margin-top: 1.3rem;
+            color: rgba($color-green, .5);
+            font-weight: 100;
+        }
+
         
+    }
+
+}
+
+.quick-bar {
+    height: 20vh;
+    background: linear-gradient(105deg,  $color-blue 49.5%, $color-white 40%, $color-green 40%);
+    padding: 1.5rem 5rem;
+    text-align: center;
+
+    &__title{
+        padding: 2rem 0;
+        font-size: 2rem;
+        color: $color-white;
+
+        &::before {
+            content: "";
+            width: 100px;
+            height: 2px;
+            border-top: 1px solid #000;
+        }
     }
 }

@@ -229,3 +229,25 @@ body {
       outline: none; }
       .header__form--input:focus {
         box-shadow: 0 1rem 1rem rgba(0, 0, 0, 0.5); }
+    .header__form--label {
+      font-size: 2rem;
+      font-weight: 100;
+      margin-left: -3rem;
+      margin-top: 1.3rem;
+      color: rgba(120, 185, 67, 0.5);
+      font-weight: 100; }
+
+.quick-bar {
+  height: 20vh;
+  background: linear-gradient(105deg, #0e237e 49.5%, #fff 40%, #78b943 40%);
+  padding: 1.5rem 5rem;
+  text-align: center; }
+  .quick-bar__title {
+    padding: 2rem 0;
+    font-size: 2rem;
+    color: #fff; }
+    .quick-bar__title::before {
+      content: "";
+      width: 100px;
+      height: 2px;
+      border-top: 1px solid #000; }
