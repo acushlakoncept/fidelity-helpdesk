@@ -46,6 +46,12 @@ $breakpoint argument choices
     opacity: 1;
     transform: translateY(0); } }
 
+@keyframes moveUpnDown {
+  0% {
+    transform: translateY(-0.5rem); }
+  100% {
+    transform: translateY(0); } }
+
 *,
 *::after,
 *::before {
@@ -152,21 +158,39 @@ body {
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-gap: 2rem; }
+  @media (max-width: 56.25em) {
+    .header {
+      grid-template-columns: 1.1fr 0.9fr;
+      grid-gap: 1.5rem; } }
+  @media (max-width: 48em) {
+    .header {
+      grid-template-columns: 1fr;
+      height: 90vh; } }
   .header__left {
-    padding: 2rem .2rem 5rem 4rem;
+    padding: 2rem 0.2rem 5rem 4rem;
     position: relative; }
+    @media (max-width: 48em) {
+      .header__left {
+        padding: 2rem 5rem 5rem 4rem;
+        height: 50vh; } }
   .header__right {
     background: url("imgs/call-center.jpg") no-repeat right bottom;
     background-size: cover;
     height: 80vh;
     width: 100%;
-    border-bottom-left-radius: .8rem;
+    border-bottom-left-radius: 0.8rem;
     position: relative; }
+    @media (max-width: 48em) {
+      .header__right {
+        height: 40vh; } }
   .header__nav {
     display: flex;
     justify-content: space-between; }
   .header__menu {
     align-self: center; }
+    @media (max-width: 28.125em) {
+      .header__menu {
+        display: none; } }
   .header__list {
     display: inline-block;
     list-style: none;
@@ -176,11 +200,17 @@ body {
     color: #000;
     padding-left: 1rem;
     text-transform: uppercase;
-    font-size: .9rem;
+    font-size: 0.9rem;
     font-weight: 700; }
   .header__link:hover {
     color: #012169;
     text-decoration: underline; }
+  .header__menu-icon {
+    font-size: 1.5rem;
+    display: none; }
+    @media (max-width: 28.125em) {
+      .header__menu-icon {
+        display: inline-block; } }
   .header .logo {
     height: 2.5rem; }
   .header__logo-text {
@@ -188,8 +218,8 @@ body {
     font-weight: 700;
     vertical-align: top;
     border-left: 1px solid;
-    padding-left: .5rem;
-    margin-left: .5rem;
+    padding-left: 0.5rem;
+    margin-left: 0.5rem;
     color: #78b943; }
   .header__support-text {
     width: 35rem;
@@ -200,7 +230,7 @@ body {
     background-color: #fff;
     box-shadow: 0 2rem 4rem rgba(0, 0, 0, 0.2);
     padding: 2rem;
-    border-radius: .8rem; }
+    border-radius: 0.8rem; }
   .header__heading {
     font-size: 3rem;
     color: #0e237e;
@@ -242,12 +272,14 @@ body {
   background: linear-gradient(105deg, #0e237e 49.5%, #fff 40%, #78b943 40%);
   padding: 1.5rem 5rem;
   text-align: center; }
+  @media (max-width: 48em) {
+    .quick-bar {
+      height: 15vh; } }
   .quick-bar__title {
     padding: 2rem 0;
     font-size: 2rem;
     color: #fff; }
-    .quick-bar__title::before {
-      content: "";
-      width: 100px;
-      height: 2px;
-      border-top: 1px solid #000; }
+    .quick-bar__title--span {
+      display: block;
+      margin-top: -0.5rem;
+      animation: moveUpnDown 0.5s ease-in-out 1s 5000; }

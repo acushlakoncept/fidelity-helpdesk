@@ -1,146 +1,190 @@
 .header {
-    width: 100vw;
+  width: 100vw;
+  height: 80vh;
+  background: linear-gradient(
+    105deg,
+    $color-white,
+    $color-white,
+    $color-green,
+    $color-blue
+  );
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 2rem;
+
+  @include respond(tab-port) {
+    grid-template-columns: 1.1fr 0.9fr;
+    grid-gap: 1.5rem;
+  }
+
+  @include respond(phone) {
+    grid-template-columns: 1fr;
+    height: 90vh;
+  }
+
+  &__left {
+    padding: 2rem 0.2rem 5rem 4rem;
+    position: relative;
+
+    @include respond(phone) {
+      padding: 2rem 5rem 5rem 4rem;
+      height: 50vh;
+    }
+  }
+
+  &__right {
+    background: url("imgs/call-center.jpg") no-repeat right bottom;
+    background-size: cover;
     height: 80vh;
-    background: linear-gradient(105deg, $color-white, $color-white, $color-green, $color-blue);
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-gap: 2rem;
+    width: 100%;
+    border-bottom-left-radius: 0.8rem;
+    position: relative;
 
-    &__left {
-        padding: 2rem .2rem 5rem 4rem;
-        position: relative;
+    @include respond(phone) {
+      height: 40vh;
+    }
+  }
+
+  &__nav {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__menu {
+    align-self: center;
+
+    @include respond(phone-small) {
+      display: none;
+    }
+  }
+
+  &__list {
+    display: inline-block;
+    list-style: none;
+    vertical-align: bottom;
+  }
+  &__link,
+  &__link:link,
+  &__link:visited {
+    text-decoration: none;
+    color: $color-black;
+    padding-left: 1rem;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    font-weight: 700;
+  }
+
+  &__link:hover {
+    color: $color-blue-2;
+    text-decoration: underline;
+  }
+
+  &__menu-icon {
+    font-size: 1.5rem;
+    display: none;
+
+    @include respond(phone-small) {
+      display: inline-block;
+    }
+    
+  }
+
+  .logo {
+    height: 2.5rem;
+  }
+
+  &__logo-text {
+    font-size: 1.5rem;
+    font-weight: 700;
+    vertical-align: top;
+    border-left: 1px solid;
+    padding-left: 0.5rem;
+    margin-left: 0.5rem;
+    color: $color-green;
+  }
+
+  &__support-text {
+    width: 35rem;
+    @include absCenter;
+    background-color: $color-white;
+    box-shadow: 0 2rem 4rem rgba($color-black, 0.2);
+    padding: 2rem;
+    border-radius: 0.8rem;
+
+    
+  }
+
+  &__heading {
+    font-size: 3rem;
+    color: $color-blue;
+    font-weight: 700;
+
+    &-secondary {
+      color: $color-black;
+      font-size: 2.5rem;
+      font-weight: 300;
+    }
+  }
+
+  &__text {
+    font-size: 1.5rem;
+    font-weight: 300;
+  }
+
+  &__form {
+    @include absCenter;
+
+    &--input {
+      padding: 1.5rem;
+      background-color: rgba($color-white, 0.8);
+      width: 35rem;
+      border: 1px solid #eee;
+      border-radius: 2rem;
+      font-size: 1.5rem;
+      font-weight: 100;
+      box-shadow: 0 2rem 2rem rgba($color-black, 0.5);
+      outline: none;
+
+      &:focus {
+        box-shadow: 0 1rem 1rem rgba($color-black, 0.5);
+      }
     }
 
-    &__right {
-        background: url('imgs/call-center.jpg') no-repeat right bottom;
-        background-size: cover;
-        height: 80vh;
-        width: 100%;
-        border-bottom-left-radius: .8rem;
-        position: relative;
+    &--label {
+      font-size: 2rem;
+      font-weight: 100;
+      margin-left: -3rem;
+      margin-top: 1.3rem;
+      color: rgba($color-green, 0.5);
+      font-weight: 100;
     }
-
-    &__nav{
-        display: flex;
-        justify-content: space-between;
-    }
-
-    &__menu {
-        align-self: center;
-    }
-
-    &__list {
-        display: inline-block;
-        list-style: none;
-        vertical-align: bottom;
-    }
-    &__link,
-    &__link:link,
-    &__link:visited{
-        text-decoration: none;
-        color: $color-black;
-        padding-left: 1rem;
-        text-transform: uppercase;
-        font-size: .9rem;
-        font-weight: 700;
-    }
-
-    &__link:hover {
-        color: $color-blue-2;
-        text-decoration: underline;
-    }
-
-    .logo {
-        height: 2.5rem;
-    }
-
-    &__logo-text {
-        font-size: 1.5rem;
-        font-weight: 700;
-        vertical-align: top;
-        border-left: 1px solid;
-        padding-left: .5rem;
-        margin-left: .5rem;
-        color: $color-green;
-    }
-
-    &__support-text {
-        width: 35rem;
-        @include absCenter;
-        background-color: $color-white;
-        box-shadow: 0 2rem 4rem rgba($color-black, .2);
-        padding: 2rem;
-        border-radius: .8rem;
-    }
-
-    &__heading {
-        font-size: 3rem;
-        color: $color-blue;
-        font-weight: 700;
-
-        &-secondary{
-            color: $color-black;
-            font-size: 2.5rem;
-            font-weight: 300;
-        }
-    }
-
-    &__text{
-        font-size: 1.5rem;
-        font-weight: 300;
-    }
-
-    &__form{
-        @include absCenter;
-
-        &--input{
-            
-            padding: 1.5rem;
-            background-color: rgba($color-white, .8);
-            width: 35rem;
-            border: 1px solid #eee;
-            border-radius: 2rem;
-            font-size: 1.5rem;
-            font-weight: 100;
-            box-shadow: 0 2rem 2rem rgba($color-black, .5);
-            outline: none;
-
-
-            &:focus {
-                box-shadow: 0 1rem 1rem rgba($color-black, .5);
-            }
-        }
-
-        &--label{
-            font-size: 2rem;
-            font-weight: 100;
-            margin-left: -3rem;
-            margin-top: 1.3rem;
-            color: rgba($color-green, .5);
-            font-weight: 100;
-        }
-
-        
-    }
-
+  }
 }
 
 .quick-bar {
-    height: 20vh;
-    background: linear-gradient(105deg,  $color-blue 49.5%, $color-white 40%, $color-green 40%);
-    padding: 1.5rem 5rem;
-    text-align: center;
+  height: 20vh;
+  background: linear-gradient(
+    105deg,
+    $color-blue 49.5%,
+    $color-white 40%,
+    $color-green 40%
+  );
+  padding: 1.5rem 5rem;
+  text-align: center;
 
-    &__title{
-        padding: 2rem 0;
-        font-size: 2rem;
-        color: $color-white;
+  @include respond(phone) {
+    height: 15vh;
+  }
 
-        &::before {
-            content: "";
-            width: 100px;
-            height: 2px;
-            border-top: 1px solid #000;
-        }
+  &__title {
+    padding: 2rem 0;
+    font-size: 2rem;
+    color: $color-white;
+
+    &--span {
+      display: block;
+      margin-top: -0.5rem;
+      animation: moveUpnDown 0.5s ease-in-out 1s 5000;
     }
+  }
 }
