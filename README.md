@@ -2,10 +2,16 @@
 
 > This project is to demo the UI for Fidelity Bank Helpdesk application.
 
+![screenshot](./imgs/screenshot.jpg)
+![screenshot](./imgs/screenshot-mobile.jpg)
+
 ## Built With
 
 - HTML
 - CSS
+- Google Fonts
+- FontAwesome
+- SASS
 
 ## Live Demo
 
