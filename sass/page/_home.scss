@@ -86,7 +86,6 @@
     @include respond(phone-small) {
       display: inline-block;
     }
-    
   }
 
   .logo {
@@ -110,8 +109,6 @@
     box-shadow: 0 2rem 4rem rgba($color-black, 0.2);
     padding: 2rem;
     border-radius: 0.8rem;
-
-    
   }
 
   &__heading {
@@ -185,6 +182,56 @@
       display: block;
       margin-top: -0.5rem;
       animation: moveUpnDown 0.5s ease-in-out 1s 5000;
+    }
+  }
+}
+
+.help-topics {
+  padding: 10rem;
+
+  .header__heading {
+    text-align: center;
+    margin-bottom: 3rem;
+  }
+
+  &__content {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 2rem;
+
+    @include respond(phone) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include respond(phone-small) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .faq {
+    &__title {
+      font-size: 1.5rem;
+      font-weight: 700;
+      margin-bottom: 1.5rem;
+      color: #000;
+      line-height: -1.2rem;
+    }
+
+    &__list {
+      list-style: none;
+      padding-bottom: 0.5rem;
+    }
+
+    &__links {
+      text-decoration: none;
+      color: #666;
+      font-size: 1.3rem;
+      transition: all 0.4s;
+
+      &:hover {
+        color: rgb(27, 27, 27);
+        text-decoration: underline;
+      }
     }
   }
 }

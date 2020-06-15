@@ -283,3 +283,36 @@ body {
       display: block;
       margin-top: -0.5rem;
       animation: moveUpnDown 0.5s ease-in-out 1s 5000; }
+
+.help-topics {
+  padding: 10rem; }
+  .help-topics .header__heading {
+    text-align: center;
+    margin-bottom: 3rem; }
+  .help-topics__content {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 2rem; }
+    @media (max-width: 48em) {
+      .help-topics__content {
+        grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 28.125em) {
+      .help-topics__content {
+        grid-template-columns: 1fr; } }
+  .help-topics .faq__title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    color: #000;
+    line-height: -1.2rem; }
+  .help-topics .faq__list {
+    list-style: none;
+    padding-bottom: 0.5rem; }
+  .help-topics .faq__links {
+    text-decoration: none;
+    color: #666;
+    font-size: 1.3rem;
+    transition: all 0.4s; }
+    .help-topics .faq__links:hover {
+      color: #1b1b1b;
+      text-decoration: underline; }
