@@ -1,0 +1,30 @@
+.dispense-section {
+    width: 100%;
+    height: 100vh;
+    background: linear-gradient(
+      105deg,
+      $color-white,
+      $color-white,
+      $color-green,
+      $color-blue
+    );
+    position: relative;
+  
+    &__content {
+      background-color: #fff;
+      width: 80vw;
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+  
+      &--header {
+        background-color: $color-blue;
+      }
+  
+      &--main {
+          padding: 2rem;
+      }
+    }
+  }
+  

@@ -316,3 +316,20 @@ body {
     .help-topics .faq__links:hover {
       color: #1b1b1b;
       text-decoration: underline; }
+
+.dispense-section {
+  width: 100%;
+  height: 100vh;
+  background: linear-gradient(105deg, #fff, #fff, #78b943, #0e237e);
+  position: relative; }
+  .dispense-section__content {
+    background-color: #fff;
+    width: 80vw;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%); }
+    .dispense-section__content--header {
+      background-color: #0e237e; }
+    .dispense-section__content--main {
+      padding: 2rem; }
