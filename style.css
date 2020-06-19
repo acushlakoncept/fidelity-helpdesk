@@ -235,6 +235,8 @@ body {
     font-size: 3rem;
     color: #0e237e;
     font-weight: 700; }
+    .header__heading--white {
+      color: #fff; }
     .header__heading-secondary {
       color: #000;
       font-size: 2.5rem;
@@ -326,10 +328,66 @@ body {
     background-color: #fff;
     width: 80vw;
     position: absolute;
-    left: 50%;
     top: 50%;
-    transform: translate(-50%, -50%); }
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 0.8rem;
+    overflow: hidden;
+    box-shadow: 0 0.4rem 0.8rem rgba(0, 0, 0, 0.2);
+    transition: all 0.4s; }
+    .dispense-section__content:hover {
+      box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2); }
     .dispense-section__content--header {
-      background-color: #0e237e; }
+      background-color: #0e237e;
+      padding: 3rem;
+      display: flex;
+      justify-content: center; }
     .dispense-section__content--main {
-      padding: 2rem; }
+      padding: 2rem;
+      font-size: 1.5rem; }
+    .dispense-section__content--p {
+      text-align: center; }
+  .dispense-section__form {
+    padding-left: 2rem; }
+    .dispense-section__form--el {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin: 2rem 0; }
+    .dispense-section__form--field {
+      flex-grow: 1; }
+    .dispense-section__form--input {
+      font-size: 1.5rem;
+      font-family: inherit;
+      color: inherit;
+      padding: 1.5rem 2rem;
+      border-radius: 2px;
+      background-color: rgba(255, 255, 255, 0.5);
+      border: none;
+      border-bottom: 3px solid transparent;
+      width: 90%;
+      display: block;
+      transition: all 0.3s; }
+      @media (max-width: 56.25em) {
+        .dispense-section__form--input {
+          width: 100%; } }
+      .dispense-section__form--input:focus {
+        outline: none;
+        box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.1);
+        border-bottom: 3px solid #0e237e; }
+      .dispense-section__form--input:focus:invalid {
+        border-bottom: 3px solid #78b943; }
+      .dispense-section__form--input::-webkit-input-placeholder {
+        color: #78b945; }
+    .dispense-section__form--label {
+      font-size: 1rem;
+      font-weight: 700;
+      margin-left: 2rem;
+      margin-top: 0.7rem;
+      display: block;
+      transition: all 0.3s; }
+    .dispense-section__form--input:placeholder-shown + .dispense-section__form--label {
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(-4rem); }

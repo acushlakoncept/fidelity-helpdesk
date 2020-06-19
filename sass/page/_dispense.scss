@@ -1,30 +1,114 @@
 .dispense-section {
-    width: 100%;
-    height: 100vh;
-    background: linear-gradient(
-      105deg,
-      $color-white,
-      $color-white,
-      $color-green,
-      $color-blue
-    );
-    position: relative;
-  
-    &__content {
-      background-color: #fff;
-      width: 80vw;
-      position: absolute;
-      left: 50%;
-      top: 50%;
-      transform: translate(-50%, -50%);
-  
-      &--header {
-        background-color: $color-blue;
-      }
-  
-      &--main {
-          padding: 2rem;
-      }
+  width: 100%;
+  height: 100vh;
+  background: linear-gradient(
+    105deg,
+    $color-white,
+    $color-white,
+    $color-green,
+    $color-blue
+  );
+  position: relative;
+
+  &__content {
+    background-color: #fff;
+    width: 80vw;
+    @include absCenter;
+    border-radius: 0.8rem;
+    overflow: hidden;
+    box-shadow: 0 0.4rem 0.8rem rgba($color-black, 0.2);
+    transition: all 0.4s;
+
+    &:hover {
+      box-shadow: 0 1px 2px rgba($color-black, 0.2);
+    }
+
+    &--header {
+      background-color: $color-blue;
+      padding: 3rem;
+      display: flex;
+      justify-content: center;
+    }
+
+    &--main {
+      padding: 2rem;
+      font-size: 1.5rem;
+    }
+
+    &--p {
+      text-align: center;
     }
   }
-  
+
+  &__form {
+    padding-left: 2rem;
+
+    &--el {
+      //   display: grid;
+      //   grid-template-columns: 1fr 1fr;
+      //   grid-gap: 2rem;
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin: 2rem 0;
+
+      @include respond(phone) {
+        // grid-template-columns: 1fr;
+      }
+    }
+
+    &--field {
+      flex-grow: 1;
+    }
+
+    &--input {
+      font-size: 1.5rem;
+      font-family: inherit;
+      color: inherit;
+      padding: 1.5rem 2rem;
+      border-radius: 2px;
+      background-color: rgba($color-white, 0.5);
+      border: none;
+      border-bottom: 3px solid transparent;
+      width: 90%;
+      display: block;
+      transition: all 0.3s;
+
+      @include respond(tab-port) {
+        width: 100%;
+      }
+
+      &:focus {
+        outline: none;
+        box-shadow: 0 1rem 2rem rgba($color-black, 0.1);
+        border-bottom: 3px solid $color-blue;
+      }
+
+      &:focus:invalid {
+        border-bottom: 3px solid $color-green;
+      }
+
+      &::-webkit-input-placeholder {
+        color: $color-green-2;
+      }
+    }
+
+    &--label {
+        font-size: 1rem;
+        font-weight: 700;
+        margin-left: 2rem;
+        margin-top: 0.7rem;
+        display: block;
+        transition: all 0.3s;
+    }
+
+    &--input:placeholder-shown + &--label {
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(-4rem);
+      }
+  }
+}
+
+
