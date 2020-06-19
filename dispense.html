@@ -58,13 +58,17 @@
                <div class="dispense-section__form--el">
                   <div class="dispense-section__form--field">
                       
-                      <input class="dispense-section__form--input" type="text" id="nuban" name="nuban" placeholder="Customer NUBAN" />
-                      <label class="dispense-section__form--label" for="nuban">Customer NUBAN :</label>
+                      <input class="dispense-section__form--input" type="number" id="nuban" name="nuban" placeholder="Customer account number" max="10" required />
+                      <label class="dispense-section__form--label" for="nuban">Customer account number :</label>
                     </div>
                     <div class="dispense-section__form--field">
-                      
-                      <input class="dispense-section__form--input" type="text" id="card" name="card" placeholder="Last 6 Digits of Card" />
-                      <label class="dispense-section__form--label" for="card">Last 6 Digits of Card :	</label>
+
+                        <select name="card" id="card" class="dispense-section__form--input">
+                            <option value="ATM Card">ATM Card</option>
+                            <option value="Instant Banking(*770#)">Instant Banking(*770#)</option>
+                            <option value="Online banking/mobile App">Online banking/mobile App</option>
+                        </select>
+                      <label class="dispense-section__form--label" for="card">Select one</label>
                     </div>
                     <div class="dispense-section__form--field">
                       
@@ -77,7 +81,7 @@
                       <label class="dispense-section__form--label" for="edate">End Start Date:</label>
                     </div>
                </div>
-                  <input type="submit" name="submit" id="submit" class="dispense-section__form--submit">
+                  <input type="submit" name="submit" id="submit" class="dispense-section__form--submit btn btn--green">
               </form>
         </div>
       </div>

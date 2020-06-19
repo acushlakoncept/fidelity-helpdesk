@@ -107,7 +107,13 @@
         opacity: 0;
         visibility: hidden;
         transform: translateY(-4rem);
-      }
+    }
+
+    &--submit {
+        text-align: center;
+        display: flex;
+        align-self: center;
+    }
   }
 }
 
