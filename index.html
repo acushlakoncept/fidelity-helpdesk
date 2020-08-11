@@ -10,6 +10,8 @@
       rel="stylesheet"
     />
     <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <script src="https://binayak.codes/dark-theme-switcher/app.js"></script>
+    <link rel="stylesheet" href="https://binayak.codes/dark-theme-switcher/styles/style.css">
     <link rel="manifest" href="manifest.json" />
 
     <meta name="mobile-web-app-capable" content="yes" />
@@ -41,6 +43,8 @@
       href="https://www.fidelitybank.ng/wp-content/uploads/2019/02/cropped-icon_trans-192x192.png"
     />
     <link rel="stylesheet" href="style.css" />
+    <link href="css/connection-detector.css" rel="stylesheet" type="text/css" />
+<script src="js/connection-detector.js"></script>
   </head>
   <body>
     <header class="header">
@@ -170,5 +174,10 @@
 
         </div>
     </section>
+
+    <script>
+      isClient();
+      window.ThemeSwitcher().Init();
+  </script>
   </body>
 </html>

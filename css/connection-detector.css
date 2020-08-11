@@ -1,0 +1,113 @@
+/*
+###
+# Project Name : Connection Detector
+# Author : Emmanuel Essien
+# Author : emmaessiensp@gmail.com
+# Maintainer By: Emmanuel Essien
+# Maintainer Email: emmaessiensp@gmail.com
+# Created by Betacodings on 26 July 2020.
+###
+*/
+
+
+body > .connectionDetector{
+
+  position: fixed;
+  width: 50%;
+  margin: 0 auto;
+  z-index: 999999;
+  left: 0;
+  top: 0;
+  right: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.connection a.reconnect-btn{
+  padding: 0.95rem;
+  float: right;
+  position: absolute;
+  right: 1rem;
+  top: 0rem;
+  cursor: pointer;
+}
+
+.dot{
+  height: 12px;
+  width: 12px;
+  position: absolute;
+  left: 0.95em;
+  margin-top: 0.2em;
+  border-radius: 50%;
+}
+.dangerdot{
+  background-color: #be0a0a;
+  border-color: #8b1212;
+}
+.successdot{
+  background-color: #17cc33;
+  border-color: #17cc33;
+}
+
+.warningdot{
+  background-color: #cf7711;
+  border-color: #cf7711;
+}
+
+
+.connection {
+  position: relative;
+  padding: 0.95rem 1.45rem 0.95rem 2rem;
+  margin-bottom: 0rem;
+  border: 1px solid transparent;
+  border-radius: 0.17rem; }
+
+.connection-heading {
+  color: inherit; }
+
+.connection-link {
+  font-weight: 600; }
+
+  .connection-black {
+    color: #ffffff;
+    background-color: #000000; }
+.connection-black a.reconnect-btn{
+        background-color: #3c3c3c;
+    }
+    
+.connection-blue {
+  color: #ffffff;
+  background-color: #146bb3; }
+.connection-blue a.reconnect-btn{
+      background-color: #205681;
+  }
+
+.connection-green {
+  color: #ffffff;
+  background-color: #3a6841; }
+
+.connection-green a.reconnect-btn{
+      background-color: #37533b;
+  }
+
+
+
+.connection-orange {
+  color: #fff;
+  background-color: #b7540f; }
+  .connection-orange a.reconnect-btn{
+      background-color: #da8e58;
+  }
+ 
+.connection-red {
+  color: #fff;
+  background-color: #731717; }
+.connection-red a.reconnect-btn{
+      background-color: #660e0e;
+  }
+
+.connection-red {
+      color: #fff;
+      background-color: #731717; }
+      .connection-red a.reconnect-btn{
+          background-color: #660e0e;
+  }
